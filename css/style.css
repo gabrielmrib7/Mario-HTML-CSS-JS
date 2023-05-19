@@ -1,0 +1,141 @@
+@font-face {
+    font-family: '8bits';
+    src: url('../static/8bit_wonder/8-BIT\ WONDER.TTF') format('truetype');
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+footer{
+    height: 10vh;
+    width: 100%;
+    background-image: url('../static/grass2.png');
+    background-size:contain;
+    background-repeat: repeat-x;
+    position: absolute;
+    animation: grassanimation 1220ms infinite linear;
+    opacity: 1.0;
+}
+
+#contadorid{
+    font-size: 100px;
+    font-family: '8bits';
+    text-align: right;
+}
+
+.gameover{
+    opacity: 0;
+    font-size: 100px;
+    font-family: '8bits';
+    text-align: center;
+    display: block;
+}
+
+
+.gameboard{
+    width: 100%;
+    height: 90vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(rgb(104, 231, 248),white);
+    opacity: 1.0;
+}
+
+
+
+.pipe{
+    position:absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipeanimation 1.5s infinite linear;
+
+}
+
+.clouds{
+    width: 80vh;
+    position: absolute;
+    animation: cloudsanimation 20s infinite linear;
+}
+
+.mario{
+    position:absolute;
+    bottom: 0px;
+    width: 150px;
+    
+}
+
+
+.jump{
+    animation: jump 0.5s ease-out;
+}
+
+@keyframes pipeanimation {
+    from{
+        right: -200px;
+    }
+
+    to{
+        right: 100%;
+        count++;
+    }
+    
+}
+
+@keyframes cloudsanimation {
+
+    0%{
+        right: -50%;
+        bottom: 40%;
+    }
+
+    50%{
+        bottom: 60%;
+    }
+
+    100%{
+        bottom: 40%;
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0%{
+        bottom: 0px;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+    50%{
+        bottom: 181px;
+    }
+    50.0001%{
+        bottom: 180px;
+    }
+    60%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 0px;
+    }
+
+}
+
+@keyframes grassanimation{
+    from{
+        background-position: 100%;
+    }
+    to{
+        background-position: 0px;
+    }
+}
